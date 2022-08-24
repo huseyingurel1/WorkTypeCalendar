@@ -48,8 +48,8 @@
           <th> User Name</th>
           <th> User Last Name</th>
           <th> User Email</th>
-          <th sec:authorize="hasRole('ROLE_ADMIN')"> User Status </th>
           <th sec:authorize="hasRole('ROLE_ADMIN')"> User Days </th>
+          <th sec:authorize="hasRole('ROLE_ADMIN')"> User Status </th>
         </tr>
       </thead>
 
@@ -58,7 +58,7 @@
           <td th:text = "${user.firstName}">  </td>
           <td th:text = "${user.lastName}">  </td>
           <td th:text = "${user.email}">  </td>
-          <td th:text = "${user.dayPlan}">  </td>
+          <td th:text = "${user.days}">  </td>
 
           <td sec:authorize="hasRole('ROLE_ADMIN')">
 
@@ -69,7 +69,6 @@
                               <p th:case="true">User  is  active</p>
                               <p th:case="false">User is passive</p>
                           </label>
-
                           <input type="checkbox"  class="form-check-input" role="switch" id="isActive" th:name="isActive"  th:checked="${user.isActive()}" onChange="this.form.submit()" />
                       </div>
                   </div>

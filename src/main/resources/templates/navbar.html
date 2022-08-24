@@ -43,7 +43,7 @@
 					<li class="nav-item"><a class="nav-link" th:href="@{/users}">User Management System</a></li>
 				</ul>
 
-				<ul class="navbar-nav navbar-right ms-auto" sec:authorize="isAuthenticated()">
+				<ul class="navbar-nav navbar-right ms-auto" sec:authorize="hasRole('ROLE_USER')">
 					<li class="nav-item"><a class="nav-link" th:href="@{/account}">myAccount</a></li>
 				</ul>
 

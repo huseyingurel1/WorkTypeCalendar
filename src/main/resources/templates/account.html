@@ -24,12 +24,11 @@
     <div class="main-container container py-5 px-4">
         <div class="row" style="justify-content: center">
             <div class="col-md-6 col-md-offset-3">
-
-                <h1>Add Employee</h1>
-                <form th:action="@{/account}" th:object="${myUser}" method="POST">
+                <h1>Add Day</h1>
+                <form th:action="@{/account}" th:object="${myDay}" method="POST">
                     <div class="form-group">
-                        <label class="control-label"> Day Plan</label>
-                        <input type="date" name="dayPlan"  class="form-control" th:field="*{dayPlan}" required autofocus="autofocus" />
+                        <label class="control-label"> WorkDate</label>
+                        <input type="date" name="name" id="name" class="form-control" th:field="*{personDay}" required autofocus="autofocus" />
                     </div>
 
                     <br>
@@ -42,14 +41,15 @@
         </div>
     </div>
 
-    <table class = "table table-dark table-hover" th:action="@{/account}" th:object = "${myUser}" method="POST">
+    <table class = "table table-dark table-hover" th:action="@{/account}" th:object = "${myUser}">
         <thead class = "table-dark">
         <tr>
             <th> User Name</th>
             <th> User Last Name</th>
             <th> User Email</th>
             <th> User Status </th>
-            <th> User dayPlan </th>
+            <th> User Days </th>
+
         </tr>
         </thead>
 
@@ -59,9 +59,10 @@
             <td th:text = "${user.lastName}">  </td>
             <td th:text = "${user.email}">  </td>
             <td th:text = "${user.isActive}"> </td>
-            <td th:text = "${user.dayPlan}"> </td>
-
+            <td th:text = "${user.days}"> </td>
         </tr>
+
+
         </tbody>
 
     </table>

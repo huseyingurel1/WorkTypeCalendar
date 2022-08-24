@@ -41,7 +41,6 @@ public class UserServiceImpl implements IUserService {
                 registrationDto.getEmail(),
                 passwordEncoder.encode(registrationDto.getPassword()),
                 registrationDto.isActive(),
-                registrationDto.getDayPlan(),
                 Arrays.asList(new Role("ROLE_USER")));
 
         return userRepository.save(user);
@@ -52,10 +51,6 @@ public class UserServiceImpl implements IUserService {
         return userRepository.findAll();
     }
 
-//    @Override
-//    public User addDayPlan(User user) {
-//        return userRepository.save(user);
-//    }
 
     @Override
     public User getUserById(Long id) {
@@ -104,7 +99,7 @@ public class UserServiceImpl implements IUserService {
                 // Email = username
                 return new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(),mapRolesToAuthorities(user.getRoles()));
                 // FirstName == username
-                //return new org.springframework.security.core.userdetails.User(user.getFirstName() ,user.getPassword(),mapRolesToAuthorities(user.getRoles()));
+//                return new org.springframework.security.core.userdetails.User(user.getFirstName() ,user.getPassword(),mapRolesToAuthorities(user.getRoles()));
             }else{
 
                 throw new UsernameNotFoundException("User Blocked by Admin");
