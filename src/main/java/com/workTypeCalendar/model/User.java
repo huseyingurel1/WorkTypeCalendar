@@ -3,7 +3,6 @@ package com.workTypeCalendar.model;
 
 import lombok.*;
 import org.hibernate.Hibernate;
-
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
@@ -11,12 +10,10 @@ import java.util.Objects;
 import java.util.Set;
 
 
-//@Component
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-//@NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name= "users" , uniqueConstraints = @UniqueConstraint(columnNames = "email"))
@@ -36,7 +33,7 @@ public class User{
     private String password;
     @Column(name = "active")
     private boolean isActive = true;
-//    ****************************************************************
+
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "user_days",
                 joinColumns = { @JoinColumn(name = "user_id")},
@@ -51,15 +48,6 @@ public class User{
         this.password = password;
     }
 
-//    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinTable(name = "USER_CALENDAR_TABLE",
-//            joinColumns = @JoinColumn(
-//                    name = "user_id", referencedColumnName = "id"),
-//
-//            inverseJoinColumns = @JoinColumn(
-//                    name = "userCalendar_id", referencedColumnName = "id"))
-//    private Set<UserCalendar> userCalendars;
-//   ***************************************
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "users_roles_",
