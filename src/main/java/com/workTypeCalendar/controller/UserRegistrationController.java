@@ -1,7 +1,7 @@
-package com.solmazDeneme.controller;
+package com.workTypeCalendar.controller;
 
-import com.solmazDeneme.dto.UserRegistrationDto;
-import com.solmazDeneme.service.IUserService;
+import com.workTypeCalendar.dto.UserRegistrationDto;
+import com.workTypeCalendar.service.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;

@@ -1,13 +1,12 @@
-package com.solmazDeneme.controller;
+package com.workTypeCalendar.controller;
 
 
-import com.solmazDeneme.dto.UserRegistrationDto;
-import com.solmazDeneme.model.Day;
-import com.solmazDeneme.model.User;
-import com.solmazDeneme.repository.DayRepository;
-import com.solmazDeneme.repository.UserRepository;
-import com.solmazDeneme.service.DayService;
-import com.solmazDeneme.service.IUserService;
+import com.workTypeCalendar.model.Day;
+import com.workTypeCalendar.model.User;
+import com.workTypeCalendar.repository.DayRepository;
+import com.workTypeCalendar.repository.UserRepository;
+import com.workTypeCalendar.service.DayService;
+import com.workTypeCalendar.service.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -95,13 +94,45 @@ public class UserController {
 
         User existingUser = userService.getUserByEmail(principal.getName());
 
-        Day day1 = new Day(day.getPersonDay());
+        Day day1 = new Day(day.getPersonDay(),day.getChooseWorkType());
+        this.dayRepository.save(day1);
 
-        existingUser.getDays().add(day1);
-        this.userRepository.save(existingUser);
-
-        return "redirect:/account";
+        if(dayRepository!=null){
+            existingUser.getDays().add(day1);
+            this.userRepository.save(existingUser);
+            return "redirect:/account";
+        }else{
+            if(dayRepository.findByPersonDay(day.getPersonDay())==null){
+                existingUser.getDays().add(day1);
+                this.userRepository.save(existingUser);
+                return "redirect:/account";
+            }
+            existingUser.setDays(existingUser.getDays());
+            this.userRepository.save(existingUser);
+            return "redirect:/account";
+        }
     }
-    //update edildi
 
+
+//    @PostMapping("/account")
+//    public String saveDay(@ModelAttribute("myDay") Day day,Principal principal){
+//
+//        User existingUser = userService.getUserByEmail(principal.getName());
+//
+//        Day day1 = new Day(day.getPersonDay(), day.getChooseWorkType());
+//
+//        Day existingDay = dayRepository.findByPersonDay(day.getPersonDay());
+//
+//        if(existingDay == null){
+//
+//            existingUser.getDays().add(day1);
+//            this.userRepository.save(existingUser);
+//
+//            return "redirect:/account";
+//        }
+//
+//        existingDay.setPersonDay(day.getPersonDay());
+//
+//        return "redirect:/account";
+//    }
 }

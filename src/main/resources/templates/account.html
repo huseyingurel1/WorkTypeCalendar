@@ -28,9 +28,25 @@
                 <form th:action="@{/account}" th:object="${myDay}" method="POST">
                     <div class="form-group">
                         <label class="control-label"> WorkDate</label>
-                        <input type="date" name="name" id="name" class="form-control" th:field="*{personDay}" required autofocus="autofocus" />
+                        <input type="date" name="name" id="name" class="form-control" th:field="*{personDay}" required autofocus="autofocus"/>
                     </div>
 
+                    <br>
+                    <div class="form-group">
+                        Choose WorkType
+                        <div th:each="model : ${T(com.workTypeCalendar.model.WorkType).values()}">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" th:field="*{chooseWorkType}" th:value="${model}" class="custom-control-input">
+                                <label class="custom-control-label" th:for="${#ids.prev('chooseWorkType')}" th:text="${model}">model</label>
+                            </div>
+
+<!--                            <label th:switch="${chooseWorkType}">-->
+<!--                                <p th:case="true">User  is  active</p>-->
+<!--                                <p th:case="false">User is passive</p>-->
+<!--                            </label>-->
+<!--                            <input type="checkbox"  class="form-check-input" role="switch" id="isActive" th:name="isActive"  th:checked="${user.isActive()}" onChange="this.form.submit()" />-->
+                        </div>
+                    </div>
                     <br>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Add</button>

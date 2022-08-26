@@ -1,4 +1,4 @@
-package com.solmazDeneme.auditor;
+package com.workTypeCalendar.auditor;
 
 import org.springframework.data.domain.AuditorAware;
 

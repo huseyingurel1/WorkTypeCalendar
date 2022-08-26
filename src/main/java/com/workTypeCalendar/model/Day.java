@@ -1,11 +1,9 @@
-package com.solmazDeneme.model;
+package com.workTypeCalendar.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -14,7 +12,6 @@ import java.util.Set;
 @Setter
 @ToString
 @RequiredArgsConstructor
-//@NoArgsConstructor
 @Entity
 @Table(name = "days")
 public class Day {
@@ -22,14 +19,17 @@ public class Day {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String personDay;
+    private WorkType chooseWorkType;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "days")
     @ToString.Exclude
     private Set<User> users = new HashSet<>();
 
-    public Day(String name) {
+    public Day(String name, WorkType chooseWorkType) {
         this.personDay = name;
+        this.chooseWorkType = chooseWorkType;
     }
 
 

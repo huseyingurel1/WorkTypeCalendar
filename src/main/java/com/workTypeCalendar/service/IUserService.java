@@ -1,8 +1,8 @@
-package com.solmazDeneme.service;
+package com.workTypeCalendar.service;
 
 
-import com.solmazDeneme.dto.UserRegistrationDto;
-import com.solmazDeneme.model.User;
+import com.workTypeCalendar.dto.UserRegistrationDto;
+import com.workTypeCalendar.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;

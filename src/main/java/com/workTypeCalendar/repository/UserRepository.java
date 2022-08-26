@@ -1,6 +1,6 @@
-package com.solmazDeneme.repository;
+package com.workTypeCalendar.repository;
 
-import com.solmazDeneme.model.User;
+import com.workTypeCalendar.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

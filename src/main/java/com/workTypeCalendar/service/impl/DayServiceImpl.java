@@ -1,8 +1,8 @@
-package com.solmazDeneme.service.impl;
+package com.workTypeCalendar.service.impl;
 
-import com.solmazDeneme.model.Day;
-import com.solmazDeneme.repository.DayRepository;
-import com.solmazDeneme.service.DayService;
+import com.workTypeCalendar.model.Day;
+import com.workTypeCalendar.repository.DayRepository;
+import com.workTypeCalendar.service.DayService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

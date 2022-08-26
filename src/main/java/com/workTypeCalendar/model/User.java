@@ -1,9 +1,8 @@
-package com.solmazDeneme.model;
+package com.workTypeCalendar.model;
 
 
 import lombok.*;
 import org.hibernate.Hibernate;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Collection;

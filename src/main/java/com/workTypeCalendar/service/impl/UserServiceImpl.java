@@ -1,11 +1,11 @@
-package com.solmazDeneme.service.impl;
+package com.workTypeCalendar.service.impl;
 
 
-import com.solmazDeneme.dto.UserRegistrationDto;
-import com.solmazDeneme.model.Role;
-import com.solmazDeneme.model.User;
-import com.solmazDeneme.repository.UserRepository;
-import com.solmazDeneme.service.IUserService;
+import com.workTypeCalendar.dto.UserRegistrationDto;
+import com.workTypeCalendar.model.Role;
+import com.workTypeCalendar.model.User;
+import com.workTypeCalendar.repository.UserRepository;
+import com.workTypeCalendar.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.GrantedAuthority;

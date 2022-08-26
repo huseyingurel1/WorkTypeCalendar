@@ -1,4 +1,4 @@
-package com.solmazDeneme.model;
+package com.workTypeCalendar.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.CreatedBy;

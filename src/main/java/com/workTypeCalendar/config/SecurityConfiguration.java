@@ -1,7 +1,7 @@
-package com.solmazDeneme.config;
+package com.workTypeCalendar.config;
 
 
-import com.solmazDeneme.service.IUserService;
+import com.workTypeCalendar.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

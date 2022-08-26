@@ -1,7 +1,7 @@
-package com.solmazDeneme.service;
+package com.workTypeCalendar.service;
 
 
-import com.solmazDeneme.model.Day;
+import com.workTypeCalendar.model.Day;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.solmazDeneme.dto;
+package com.workTypeCalendar.dto;
 
 
 import lombok.AllArgsConstructor;
