@@ -80,4 +80,7 @@ public class User{
     public int hashCode() {
         return getClass().hashCode();
     }
+
+    public void setDays(String personDay, WorkType chooseWorkType) {
+    }
 }

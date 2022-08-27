@@ -42,7 +42,7 @@
     </div>
 
 
-    <table class = "table table-dark table-hover" th:action="@{/updateUser}" th:object = "${user}" method="POST" sec:authorize="hasRole('ROLE_ADMIN')">
+    <table class = "table table-dark table-hover" th:action="@{/updateUser}" th:object = "${users}" method="POST" sec:authorize="hasRole('ROLE_ADMIN')">
       <thead class = "table-dark">
         <tr>
           <th> User Name</th>
